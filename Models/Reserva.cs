@@ -18,7 +18,7 @@ namespace DesafioProjetoHospedagem.Models
             if (Suite.Capacidade >= hospedes.Count)
                 Hospedes = hospedes;
             else
-                throw new Exception("Capacidade menor que o número de hóspedes");
+                throw new Exception(SuiteExceptionMessage.CapacidadeMenorQueHospedes.DisplayName);
         }
 
         public void CadastrarSuite(Suite suite)

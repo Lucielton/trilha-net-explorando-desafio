@@ -11,7 +11,15 @@ namespace DesafioProjetoHospedagem.Models
             ValorDiaria = valorDiaria;
         }
 
-        public string TipoSuite { get; set; }
+        public string TipoSuite 
+        { 
+            get { return TipoSuite; }
+            set
+            {
+                if (value != "Premium" && value != "Luxo" && value != "Simples")
+                    throw new ArgumentException(ReservaExceptionMessage.TipoSuiteValorInvalido.DisplayName);
+            } 
+        }
         public int Capacidade { get; set; }
         public decimal ValorDiaria { get; set; }
     }
